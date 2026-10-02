@@ -6,9 +6,20 @@ struct ExploreView: View {
     var body: some View {
         List {
             Section {
+                CampusHeader(
+                    eyebrow: "San Francisco State",
+                    title: "Explore campus",
+                    subtitle: "Discover landmarks and collect the places you visit.",
+                    systemImage: "map.fill"
+                )
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+            }
+
+            Section {
                 GoogleMapView(landmarks: model.landmarks)
                     .frame(height: 300)
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
             }
 
             Section("Landmarks") {
@@ -16,16 +27,18 @@ struct ExploreView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
                             VStack(alignment: .leading, spacing: 2) {
-                                Text(landmark.name).font(.headline)
+                                Text(landmark.name)
+                                    .font(.headline)
+                                    .foregroundStyle(GatorGoTheme.ink)
                                 Text(landmark.description)
                                     .font(.subheadline)
-                                    .foregroundStyle(.secondary)
+                                    .foregroundStyle(GatorGoTheme.muted)
                             }
                             Spacer()
                             if model.claimedIDs.contains(landmark.id) {
                                 Label("Claimed", systemImage: "checkmark.seal.fill")
                                     .labelStyle(.iconOnly)
-                                    .foregroundStyle(.secondary)
+                                    .foregroundStyle(GatorGoTheme.purple)
                             }
                         }
 
@@ -33,6 +46,8 @@ struct ExploreView: View {
                             Button("Claim when I’m here") {
                                 Task { await model.claim(landmark) }
                             }
+                            .fontWeight(.semibold)
+                            .tint(GatorGoTheme.purple)
                             .disabled(model.isLoading)
                         }
                     }
@@ -55,7 +70,11 @@ struct ExploreView: View {
                     .font(.footnote)
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(GatorGoTheme.canvas)
+        .tint(GatorGoTheme.purple)
         .navigationTitle("Explore")
+        .navigationBarTitleDisplayMode(.inline)
         .refreshable { await model.load() }
         .task { await model.load() }
         .alert("Landmark", isPresented: .constant(model.successMessage != nil)) {

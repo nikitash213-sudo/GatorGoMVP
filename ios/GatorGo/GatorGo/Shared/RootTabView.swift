@@ -18,5 +18,8 @@ struct RootTabView: View {
             NavigationStack { ProfileView() }
                 .tabItem { Label("Profile", systemImage: "person.crop.circle") }
         }
+        .tint(GatorGoTheme.gold)
+        .toolbarBackground(GatorGoTheme.purple, for: .tabBar)
+        .toolbarColorScheme(.dark, for: .tabBar)
     }
 }

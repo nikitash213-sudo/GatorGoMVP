@@ -7,7 +7,14 @@ struct ResourceDetailView: View {
     var body: some View {
         List {
             Section {
+                Label(resource.category.uppercased(), systemImage: "bookmark.fill")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(GatorGoTheme.purple)
+            }
+
+            Section {
                 Text(resource.summary)
+                    .foregroundStyle(GatorGoTheme.ink)
             }
 
             Section("Eligibility") {
@@ -29,6 +36,9 @@ struct ResourceDetailView: View {
                 }
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(GatorGoTheme.canvas)
+        .tint(GatorGoTheme.purple)
         .navigationTitle(resource.title)
         .navigationBarTitleDisplayMode(.inline)
     }

@@ -35,6 +35,7 @@
 		BB867A01DAA1D6B79BEF989A /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0C9C452CC2BBC7F7D6F29 /* FirestoreService.swift */; };
 		C1DEBD02751572FEACA82325 /* ResourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280A4F2E7AF501BB2915551 /* ResourcesViewModel.swift */; };
 		CF3880437D7D2D914574417A /* AppCheckProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2523F0B245324406B8B1A45 /* AppCheckProviderFactory.swift */; };
+		E7EB41ACBB914F3EB28A743E /* GatorGoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F2EF5E2FC6C9C50299BD5A /* GatorGoTheme.swift */; };
 		F7B9A4BAC7FBD5EA86BEF099 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0560335DCDEFCE9CEBCF3DB /* AppRootView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		13058F7247D6EF2559681D72 /* TripPlannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerViewModel.swift; sourceTree = "<group>"; };
 		15F54EC120E0878935BF6A35 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		208DF9080BDF872C275BF532 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		34F2EF5E2FC6C9C50299BD5A /* GatorGoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatorGoTheme.swift; sourceTree = "<group>"; };
 		3B7D47EEBDE8ECD59C4C6FA3 /* GatorGo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GatorGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4333285B6C22B40C51E51097 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		4650C4FAA245DFCE890F9F5C /* ResourceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		1B1EDF0400DDD7EBE87A6C9C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				34F2EF5E2FC6C9C50299BD5A /* GatorGoTheme.swift */,
 				C9483E26711E75623FF8DEF1 /* GoogleMapView.swift */,
 				D31CAA7E8B1F6F9F54225B65 /* ResourceCard.swift */,
 				8C3EE97D0301B80EA5BBC27F /* RootTabView.swift */,
@@ -324,6 +327,7 @@
 				BB867A01DAA1D6B79BEF989A /* FirestoreService.swift in Sources */,
 				4D78C75422732B78DC776FEE /* FunctionsService.swift in Sources */,
 				449BECD74813B148F41EE7A8 /* GatorGoApp.swift in Sources */,
+				E7EB41ACBB914F3EB28A743E /* GatorGoTheme.swift in Sources */,
 				B23444903ADB3EAC3A723002 /* GoogleMapView.swift in Sources */,
 				4608B7031DCC47D0044E60E7 /* LocationService.swift in Sources */,
 				487A06BB49AFC330ED1D8BE1 /* ProfileView.swift in Sources */,

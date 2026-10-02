@@ -40,3 +40,12 @@ targets:
         product: FirebaseAppCheck
       - package: GoogleMaps
         product: GoogleMaps
+schemes:
+  GatorGo:
+    build:
+      targets:
+        GatorGo: all
+    run:
+      config: Debug
+    archive:
+      config: Release

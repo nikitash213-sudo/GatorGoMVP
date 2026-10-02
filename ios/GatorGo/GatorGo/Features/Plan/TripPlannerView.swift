@@ -5,6 +5,17 @@ struct TripPlannerView: View {
 
     var body: some View {
         Form {
+            Section {
+                CampusHeader(
+                    eyebrow: "San Francisco State",
+                    title: "Plan your route",
+                    subtitle: "Get across campus and the city with a trip that fits your needs.",
+                    systemImage: "tram.fill"
+                )
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+            }
+
             Section("Trip") {
                 Picker("Destination", selection: $model.selectedLandmarkID) {
                     ForEach(model.landmarks) { landmark in
@@ -86,7 +97,11 @@ struct TripPlannerView: View {
                 )
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(GatorGoTheme.canvas)
+        .tint(GatorGoTheme.purple)
         .navigationTitle("Plan a Trip")
+        .navigationBarTitleDisplayMode(.inline)
         .task {
             await model.load()
         }
@@ -116,6 +131,7 @@ private struct TripResultView: View {
     var body: some View {
         Section("Grounded recommendation") {
             Text(result.explanation)
+                .foregroundStyle(GatorGoTheme.ink)
 
             if let destination, let recommended {
                 GoogleMapView(
@@ -141,6 +157,7 @@ private struct TripResultView: View {
                                 : "Alternate"
                         )
                         .font(.headline)
+                        .foregroundStyle(GatorGoTheme.purple)
 
                         Spacer()
 
@@ -150,7 +167,7 @@ private struct TripResultView: View {
 
                     Text(route.distanceText)
                         .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(GatorGoTheme.muted)
 
                     ForEach(
                         route.transitSteps,

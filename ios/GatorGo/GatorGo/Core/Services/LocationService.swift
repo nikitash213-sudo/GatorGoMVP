@@ -15,7 +15,7 @@ final class LocationService: NSObject, ObservableObject {
                 return "Location permission is required for this action."
 
             case .unavailable:
-                return "A current location could not be determined."
+                return "A location fix is not available yet. In Simulator, choose Features > Location > Apple. On iPhone, enable Location Services and try again outdoors."
 
             case .requestAlreadyInFlight:
                 return "A location request is already in progress."
@@ -25,6 +25,7 @@ final class LocationService: NSObject, ObservableObject {
 
     private let manager = CLLocationManager()
     private var continuation: CheckedContinuation<CLLocation, Error>?
+    private var locationUnknownRetries = 0
 
     override init() {
         super.init()
@@ -42,6 +43,7 @@ final class LocationService: NSObject, ObservableObject {
             }
 
             self.continuation = continuation
+            self.locationUnknownRetries = 0
 
             switch manager.authorizationStatus {
             case .notDetermined:
@@ -140,6 +142,30 @@ extension LocationService: @preconcurrency CLLocationManagerDelegate {
         _ manager: CLLocationManager,
         didFailWithError error: Error
     ) {
+        if let locationError = error as? CLError {
+            switch locationError.code {
+            case .locationUnknown where locationUnknownRetries == 0:
+                locationUnknownRetries += 1
+                Task { @MainActor [weak self] in
+                    try? await Task.sleep(for: .seconds(1))
+                    guard let self, self.continuation != nil else { return }
+                    self.manager.requestLocation()
+                }
+                return
+
+            case .locationUnknown:
+                finish(with: .failure(LocationError.unavailable))
+                return
+
+            case .denied:
+                finish(with: .failure(LocationError.permissionDenied))
+                return
+
+            default:
+                break
+            }
+        }
+
         finish(
             with: .failure(error)
         )

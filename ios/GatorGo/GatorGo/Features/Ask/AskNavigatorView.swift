@@ -6,6 +6,17 @@ struct AskNavigatorView: View {
     var body: some View {
         List {
             Section {
+                CampusHeader(
+                    eyebrow: "San Francisco State",
+                    title: "Ask GatorGo",
+                    subtitle: "Get answers grounded in the campus resource catalog.",
+                    systemImage: "sparkles"
+                )
+                .listRowInsets(EdgeInsets())
+                .listRowBackground(Color.clear)
+            }
+
+            Section {
                 TextField("What do you need?", text: $model.question, axis: .vertical)
                     .lineLimit(3...6)
                 Button {
@@ -45,7 +56,11 @@ struct AskNavigatorView: View {
                 }
             }
         }
+        .scrollContentBackground(.hidden)
+        .background(GatorGoTheme.canvas)
+        .tint(GatorGoTheme.purple)
         .navigationTitle("Ask GatorGo")
+        .navigationBarTitleDisplayMode(.inline)
         .alert("Could not answer", isPresented: .constant(model.errorMessage != nil)) {
             Button("OK") { model.errorMessage = nil }
         } message: {
