@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+firebase-debug.log
+.firebaserc
+functions/node_modules/
+functions/lib/
+ios/GatorGo/GatorGo/GoogleService-Info.plist
+ios/GatorGo/Config/Secrets.xcconfig
+ios/GatorGo/*.xcodeproj/xcuserdata/
+ios/GatorGo/*.xcworkspace/xcuserdata/
+DerivedData/

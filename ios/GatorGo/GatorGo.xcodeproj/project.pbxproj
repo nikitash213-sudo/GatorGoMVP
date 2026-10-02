@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05D84406B9C62A09330F2AF0 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3EE97D0301B80EA5BBC27F /* RootTabView.swift */; };
+		063911B65AB9A15AE220A473 /* ResourceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4650C4FAA245DFCE890F9F5C /* ResourceDetailView.swift */; };
+		0D23158BD4193CDD142F2BBD /* TripPlannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13058F7247D6EF2559681D72 /* TripPlannerViewModel.swift */; };
+		24D1C62C8EB7F4662FF71D3F /* AskNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7C74F361E745DAD610C6DD /* AskNavigatorView.swift */; };
+		2B7F617F72AAA6C8CE184136 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 50ED2BDA7259A28BB5E3BAC4 /* GoogleMaps */; };
+		2D2321B7C6A3CAB1E778106A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0375BFF6E8C160504F31ABB6 /* GoogleService-Info.plist */; };
+		2E3E5828DCEF09FF7E7B0C71 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 99009B7C9341DD626B9722E7 /* FirebaseFirestore */; };
+		3CADCBEEF8BFBDDC3B7C29E8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208DF9080BDF872C275BF532 /* AuthService.swift */; };
+		3EED8BA338615C4D7E97E80E /* TripPlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D4F6EFAE855BAFFD2C41BD /* TripPlannerView.swift */; };
+		449BECD74813B148F41EE7A8 /* GatorGoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76442163C3ABD2FFA7DD91A5 /* GatorGoApp.swift */; };
+		45D9A8C1124F04505CD58E12 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = C5FB5814A21CFC5D9A076EED /* FirebaseFunctions */; };
+		4608B7031DCC47D0044E60E7 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4333285B6C22B40C51E51097 /* LocationService.swift */; };
+		487A06BB49AFC330ED1D8BE1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4603BAE34A2D26BF01330C8 /* ProfileView.swift */; };
+		4D78C75422732B78DC776FEE /* FunctionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CDD66BEF404A5541ABC692 /* FunctionsService.swift */; };
+		55C600323E9D48E0F374D35F /* AppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33D70DD7255C14F6F7FCF9D /* AppModels.swift */; };
+		63B7D7A79ACD77D3F4A7979D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FE0B8DC40746B9D0C5CFB /* AppDelegate.swift */; };
+		646FE3204204D6AA1A1910FE /* AskNavigatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527D4C09F62F4499618C16E1 /* AskNavigatorViewModel.swift */; };
+		66B8E07EA79920DBBBB194EB /* ResourceCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31CAA7E8B1F6F9F54225B65 /* ResourceCard.swift */; };
+		73DEE38E4B3EAFA5AA555261 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9EF14AEE6109BA8F91DD936D /* FirebaseAuth */; };
+		7E91CC969395D1956BF9FEF6 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F54EC120E0878935BF6A35 /* ExploreViewModel.swift */; };
+		853F5227FBDA1DEBA1A80F28 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B1BD5B74F110D9358EB9B5 /* ResourcesView.swift */; };
+		8B0B3CADB4F2271F8FCFFA3A /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = FC07E7DDA78C54E16842B9B9 /* FirebaseAppCheck */; };
+		8E4BBE4AE293ABD1AAAFA61E /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2E576056718FE4B2BC1D6281 /* FirebaseCore */; };
+		953D37F61B93E9ABB75DB620 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03D1E9E3EB903BFC632B3B0 /* ExploreView.swift */; };
+		B23444903ADB3EAC3A723002 /* GoogleMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9483E26711E75623FF8DEF1 /* GoogleMapView.swift */; };
+		BB867A01DAA1D6B79BEF989A /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A0C9C452CC2BBC7F7D6F29 /* FirestoreService.swift */; };
+		C1DEBD02751572FEACA82325 /* ResourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280A4F2E7AF501BB2915551 /* ResourcesViewModel.swift */; };
+		CF3880437D7D2D914574417A /* AppCheckProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2523F0B245324406B8B1A45 /* AppCheckProviderFactory.swift */; };
+		F7B9A4BAC7FBD5EA86BEF099 /* AppRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0560335DCDEFCE9CEBCF3DB /* AppRootView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00B1BD5B74F110D9358EB9B5 /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
+		0375BFF6E8C160504F31ABB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		06856F1F0BC01D48733FA344 /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		13058F7247D6EF2559681D72 /* TripPlannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerViewModel.swift; sourceTree = "<group>"; };
+		15F54EC120E0878935BF6A35 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		208DF9080BDF872C275BF532 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		3B7D47EEBDE8ECD59C4C6FA3 /* GatorGo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = GatorGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4333285B6C22B40C51E51097 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		4650C4FAA245DFCE890F9F5C /* ResourceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceDetailView.swift; sourceTree = "<group>"; };
+		527D4C09F62F4499618C16E1 /* AskNavigatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskNavigatorViewModel.swift; sourceTree = "<group>"; };
+		5B6FE0B8DC40746B9D0C5CFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70CDD66BEF404A5541ABC692 /* FunctionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionsService.swift; sourceTree = "<group>"; };
+		76442163C3ABD2FFA7DD91A5 /* GatorGoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatorGoApp.swift; sourceTree = "<group>"; };
+		8C3EE97D0301B80EA5BBC27F /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabView.swift; sourceTree = "<group>"; };
+		B0560335DCDEFCE9CEBCF3DB /* AppRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootView.swift; sourceTree = "<group>"; };
+		B4603BAE34A2D26BF01330C8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C33D70DD7255C14F6F7FCF9D /* AppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModels.swift; sourceTree = "<group>"; };
+		C9483E26711E75623FF8DEF1 /* GoogleMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapView.swift; sourceTree = "<group>"; };
+		CC7C74F361E745DAD610C6DD /* AskNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskNavigatorView.swift; sourceTree = "<group>"; };
+		D1D4F6EFAE855BAFFD2C41BD /* TripPlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPlannerView.swift; sourceTree = "<group>"; };
+		D2523F0B245324406B8B1A45 /* AppCheckProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCheckProviderFactory.swift; sourceTree = "<group>"; };
+		D31CAA7E8B1F6F9F54225B65 /* ResourceCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceCard.swift; sourceTree = "<group>"; };
+		DC1A04306552803BFA9523CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E0A0C9C452CC2BBC7F7D6F29 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		E1D63E0F0126510EB5B42368 /* GatorGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GatorGo.entitlements; sourceTree = "<group>"; };
+		E280A4F2E7AF501BB2915551 /* ResourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesViewModel.swift; sourceTree = "<group>"; };
+		F03D1E9E3EB903BFC632B3B0 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C0F0EB91C9EE743C6D47562E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E4BBE4AE293ABD1AAAFA61E /* FirebaseCore in Frameworks */,
+				73DEE38E4B3EAFA5AA555261 /* FirebaseAuth in Frameworks */,
+				2E3E5828DCEF09FF7E7B0C71 /* FirebaseFirestore in Frameworks */,
+				45D9A8C1124F04505CD58E12 /* FirebaseFunctions in Frameworks */,
+				8B0B3CADB4F2271F8FCFFA3A /* FirebaseAppCheck in Frameworks */,
+				2B7F617F72AAA6C8CE184136 /* GoogleMaps in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		032F10E1F6BCBDA14F6F0D29 /* Ask */ = {
+			isa = PBXGroup;
+			children = (
+				CC7C74F361E745DAD610C6DD /* AskNavigatorView.swift */,
+				527D4C09F62F4499618C16E1 /* AskNavigatorViewModel.swift */,
+			);
+			path = Ask;
+			sourceTree = "<group>";
+		};
+		1B1EDF0400DDD7EBE87A6C9C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C9483E26711E75623FF8DEF1 /* GoogleMapView.swift */,
+				D31CAA7E8B1F6F9F54225B65 /* ResourceCard.swift */,
+				8C3EE97D0301B80EA5BBC27F /* RootTabView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		45509EFE3164CCC4F49D8B04 = {
+			isa = PBXGroup;
+			children = (
+				D84DC0FC767EEABFD315055A /* Config */,
+				57C4F154CA47148A6B677E98 /* GatorGo */,
+				9E6BA6962BCC373F4633B238 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49E2CE872DC6D696F487C240 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D2523F0B245324406B8B1A45 /* AppCheckProviderFactory.swift */,
+				5B6FE0B8DC40746B9D0C5CFB /* AppDelegate.swift */,
+				B0560335DCDEFCE9CEBCF3DB /* AppRootView.swift */,
+				76442163C3ABD2FFA7DD91A5 /* GatorGoApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		57C4F154CA47148A6B677E98 /* GatorGo */ = {
+			isa = PBXGroup;
+			children = (
+				E1D63E0F0126510EB5B42368 /* GatorGo.entitlements */,
+				0375BFF6E8C160504F31ABB6 /* GoogleService-Info.plist */,
+				DC1A04306552803BFA9523CA /* Info.plist */,
+				49E2CE872DC6D696F487C240 /* App */,
+				8A54A2DEB6F42D42C49B1FD8 /* Core */,
+				909222EC260E4002010D1213 /* Features */,
+				1B1EDF0400DDD7EBE87A6C9C /* Shared */,
+			);
+			path = GatorGo;
+			sourceTree = "<group>";
+		};
+		5BCA50608749F0ACCA2EFCD6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				208DF9080BDF872C275BF532 /* AuthService.swift */,
+				E0A0C9C452CC2BBC7F7D6F29 /* FirestoreService.swift */,
+				70CDD66BEF404A5541ABC692 /* FunctionsService.swift */,
+				4333285B6C22B40C51E51097 /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		617DBDFD715130057CED929D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B4603BAE34A2D26BF01330C8 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		8A54A2DEB6F42D42C49B1FD8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9FBB6E715A519933BA252ECB /* Models */,
+				5BCA50608749F0ACCA2EFCD6 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		909222EC260E4002010D1213 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				032F10E1F6BCBDA14F6F0D29 /* Ask */,
+				D14F38EFED42BC829E1121A2 /* Explore */,
+				F437280D04CE5C8E058B197B /* Plan */,
+				617DBDFD715130057CED929D /* Profile */,
+				CEE8A8F079524E3BD2C4AF38 /* Resources */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9E6BA6962BCC373F4633B238 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B7D47EEBDE8ECD59C4C6FA3 /* GatorGo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FBB6E715A519933BA252ECB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C33D70DD7255C14F6F7FCF9D /* AppModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEE8A8F079524E3BD2C4AF38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4650C4FAA245DFCE890F9F5C /* ResourceDetailView.swift */,
+				00B1BD5B74F110D9358EB9B5 /* ResourcesView.swift */,
+				E280A4F2E7AF501BB2915551 /* ResourcesViewModel.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D14F38EFED42BC829E1121A2 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				F03D1E9E3EB903BFC632B3B0 /* ExploreView.swift */,
+				15F54EC120E0878935BF6A35 /* ExploreViewModel.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		D84DC0FC767EEABFD315055A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				06856F1F0BC01D48733FA344 /* Base.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		F437280D04CE5C8E058B197B /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+				D1D4F6EFAE855BAFFD2C41BD /* TripPlannerView.swift */,
+				13058F7247D6EF2559681D72 /* TripPlannerViewModel.swift */,
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		062119A943419544503CFE5A /* GatorGo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42711109EDCCC1CDE3E9C33B /* Build configuration list for PBXNativeTarget "GatorGo" */;
+			buildPhases = (
+				3A5D1035F7FC71B466B7C7EB /* Sources */,
+				B0F3730AA4C1CE84F37295B8 /* Resources */,
+				C0F0EB91C9EE743C6D47562E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GatorGo;
+			packageProductDependencies = (
+				2E576056718FE4B2BC1D6281 /* FirebaseCore */,
+				9EF14AEE6109BA8F91DD936D /* FirebaseAuth */,
+				99009B7C9341DD626B9722E7 /* FirebaseFirestore */,
+				C5FB5814A21CFC5D9A076EED /* FirebaseFunctions */,
+				FC07E7DDA78C54E16842B9B9 /* FirebaseAppCheck */,
+				50ED2BDA7259A28BB5E3BAC4 /* GoogleMaps */,
+			);
+			productName = GatorGo;
+			productReference = 3B7D47EEBDE8ECD59C4C6FA3 /* GatorGo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AF4A5B5C02286E90274199E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					062119A943419544503CFE5A = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DFDA1851072F22FB249D5F40 /* Build configuration list for PBXProject "GatorGo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 45509EFE3164CCC4F49D8B04;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7B21783B18BF4513AEE7D441 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A17C250CAD97362F9A7AE741 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9E6BA6962BCC373F4633B238 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				062119A943419544503CFE5A /* GatorGo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0F3730AA4C1CE84F37295B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D2321B7C6A3CAB1E778106A /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A5D1035F7FC71B466B7C7EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF3880437D7D2D914574417A /* AppCheckProviderFactory.swift in Sources */,
+				63B7D7A79ACD77D3F4A7979D /* AppDelegate.swift in Sources */,
+				55C600323E9D48E0F374D35F /* AppModels.swift in Sources */,
+				F7B9A4BAC7FBD5EA86BEF099 /* AppRootView.swift in Sources */,
+				24D1C62C8EB7F4662FF71D3F /* AskNavigatorView.swift in Sources */,
+				646FE3204204D6AA1A1910FE /* AskNavigatorViewModel.swift in Sources */,
+				3CADCBEEF8BFBDDC3B7C29E8 /* AuthService.swift in Sources */,
+				953D37F61B93E9ABB75DB620 /* ExploreView.swift in Sources */,
+				7E91CC969395D1956BF9FEF6 /* ExploreViewModel.swift in Sources */,
+				BB867A01DAA1D6B79BEF989A /* FirestoreService.swift in Sources */,
+				4D78C75422732B78DC776FEE /* FunctionsService.swift in Sources */,
+				449BECD74813B148F41EE7A8 /* GatorGoApp.swift in Sources */,
+				B23444903ADB3EAC3A723002 /* GoogleMapView.swift in Sources */,
+				4608B7031DCC47D0044E60E7 /* LocationService.swift in Sources */,
+				487A06BB49AFC330ED1D8BE1 /* ProfileView.swift in Sources */,
+				66B8E07EA79920DBBBB194EB /* ResourceCard.swift in Sources */,
+				063911B65AB9A15AE220A473 /* ResourceDetailView.swift in Sources */,
+				853F5227FBDA1DEBA1A80F28 /* ResourcesView.swift in Sources */,
+				C1DEBD02751572FEACA82325 /* ResourcesViewModel.swift in Sources */,
+				05D84406B9C62A09330F2AF0 /* RootTabView.swift in Sources */,
+				3EED8BA338615C4D7E97E80E /* TripPlannerView.swift in Sources */,
+				0D23158BD4193CDD142F2BBD /* TripPlannerViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		00F547735D33FF53E05460EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06856F1F0BC01D48733FA344 /* Base.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GatorGo/GatorGo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = GatorGo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.sfsu.gatorgo;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		286408D4E17D92DEC318E694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		74C8C554361A467A00DCF252 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06856F1F0BC01D48733FA344 /* Base.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GatorGo/GatorGo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = GatorGo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.sfsu.gatorgo;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77F7BCBA4C39352A0B5A00FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42711109EDCCC1CDE3E9C33B /* Build configuration list for PBXNativeTarget "GatorGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74C8C554361A467A00DCF252 /* Debug */,
+				00F547735D33FF53E05460EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DFDA1851072F22FB249D5F40 /* Build configuration list for PBXProject "GatorGo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77F7BCBA4C39352A0B5A00FC /* Debug */,
+				286408D4E17D92DEC318E694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B21783B18BF4513AEE7D441 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.15.0;
+			};
+		};
+		A17C250CAD97362F9A7AE741 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E576056718FE4B2BC1D6281 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B21783B18BF4513AEE7D441 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		50ED2BDA7259A28BB5E3BAC4 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A17C250CAD97362F9A7AE741 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+		99009B7C9341DD626B9722E7 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B21783B18BF4513AEE7D441 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		9EF14AEE6109BA8F91DD936D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B21783B18BF4513AEE7D441 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		C5FB5814A21CFC5D9A076EED /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B21783B18BF4513AEE7D441 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		FC07E7DDA78C54E16842B9B9 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B21783B18BF4513AEE7D441 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1AF4A5B5C02286E90274199E /* Project object */;
+}

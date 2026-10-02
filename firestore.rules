@@ -1,0 +1,34 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function ownsDocument(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    // Curated catalog. The Admin SDK/server owns writes.
+    match /resources/{resourceId} {
+      allow read: if signedIn() && resource.data.isActive == true;
+      allow write: if false;
+    }
+
+    match /landmarks/{landmarkId} {
+      allow read: if signedIn() && resource.data.isActive == true;
+      allow write: if false;
+    }
+
+    match /users/{uid} {
+      allow read: if ownsDocument(uid);
+      allow write: if false;
+
+      // Claims are created only by the backend after server-side distance verification.
+      match /claims/{claimId} {
+        allow read: if ownsDocument(uid);
+        allow write: if false;
+      }
+    }
+  }
+}
