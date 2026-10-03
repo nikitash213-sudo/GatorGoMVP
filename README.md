@@ -41,7 +41,7 @@ SwiftUI iOS app
 
 - **No Gemini or Routes API secrets in the iOS app.** Both keys are Cloud Secret Manager-backed function secrets.
 - **AI is retrieval-grounded.** The model receives only current candidate records and its returned record IDs are validated against the retrieved set.
-- **Deterministic fallback.** If AI output cannot be parsed/validated, the backend returns a safe non-AI fallback rather than invented data.
+- **Deterministic fallback.** If AI output cannot be parsed/validated, the backend returns a safe non-AI fallback rather than invented data. Gemini API request failures are surfaced as callable errors instead of being misreported as validation failures.
 - **Server-authoritative claims.** The client requests location only after a user action; the server checks distance and stores only the claim plus minimal verification metadata.
 - **Firestore is deny-by-default for writes.** Catalog and claim writes are server-only.
 - **App Check + Auth protect callable endpoints.** Anonymous auth keeps the demo low-friction while still providing a per-user identity boundary.
@@ -108,10 +108,10 @@ firebase functions:secrets:set ROUTES_API_KEY
 `GEMINI_MODEL` defaults to:
 
 ```text
-gemma-4-26b-a4b-it
+gemini-3.8-flash
 ```
 
-If your hackathon rules require a different exact Gemma model, change the default in `functions/src/index.ts` and document the model in your submission README/demo.
+Set `GEMINI_MODEL` to another available model in the Functions environment if needed.
 
 For the iOS Maps key:
 

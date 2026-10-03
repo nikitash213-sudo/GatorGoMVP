@@ -24,6 +24,30 @@ function extractJson(text: string): unknown {
   return JSON.parse(unfenced);
 }
 
+function statusCode(error: unknown): number | undefined {
+  if (typeof error !== "object" || error === null || !("status" in error)) {
+    return undefined;
+  }
+  return typeof error.status === "number" ? error.status : undefined;
+}
+
+async function generateContentWithRetry(
+  ai: GoogleGenAI,
+  model: string,
+  contents: string,
+) {
+  try {
+    return await ai.models.generateContent({model, contents});
+  } catch (error) {
+    if (statusCode(error) !== 503) {
+      throw error;
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 1_000));
+    return ai.models.generateContent({model, contents});
+  }
+}
+
 function validResourceIds(requested: string[], resources: ResourceRecord[]): string[] {
   const allowed = new Set(resources.map((resource) => resource.id));
   return [...new Set(requested)].filter((id) => allowed.has(id));
@@ -66,11 +90,9 @@ CANDIDATE RECORDS:
 ${JSON.stringify(records)}
 `;
 
+  const response = await generateContentWithRetry(ai, args.model, prompt);
+
   try {
-    const response = await ai.models.generateContent({
-      model: args.model,
-      contents: prompt,
-    });
     const parsed = recommendationSchema.parse(extractJson(response.text ?? ""));
     return {
       ...parsed,
@@ -127,8 +149,9 @@ ROUTES: ${JSON.stringify(routeData)}
 NEARBY RESOURCES: ${JSON.stringify(resourceData)}
 `;
 
+  const response = await generateContentWithRetry(ai, args.model, prompt);
+
   try {
-    const response = await ai.models.generateContent({model: args.model, contents: prompt});
     const parsed = tripExplanationSchema.parse(extractJson(response.text ?? ""));
     const validRoute = args.routes.some((route) => route.id === parsed.recommendedRouteId)
       ? parsed.recommendedRouteId

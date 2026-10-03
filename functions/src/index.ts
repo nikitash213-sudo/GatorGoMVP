@@ -19,7 +19,7 @@ const db = getFirestore();
 
 const geminiApiKey = defineSecret("GEMINI_API_KEY");
 const routesApiKey = defineSecret("ROUTES_API_KEY");
-const geminiModel = defineString("GEMINI_MODEL", {default: "gemma-4-26b-a4b-it"});
+const geminiModel = defineString("GEMINI_MODEL", {default: "gemini-3.8-flash"});
 
 const callableOptions = {
   region: "us-west1",
@@ -56,6 +56,35 @@ function resourceFromDoc(id: string, data: DocumentData): ResourceRecord {
   };
 }
 
+function geminiStatusCode(error: unknown): number | undefined {
+  if (typeof error !== "object" || error === null || !("status" in error)) {
+    return undefined;
+  }
+  return typeof error.status === "number" ? error.status : undefined;
+}
+
+function geminiUnavailable(error: unknown, model: string): HttpsError {
+  const statusCode = geminiStatusCode(error);
+  console.error("Gemini API request failed", {
+    model,
+    errorType: error instanceof Error ? error.name : "UnknownError",
+    statusCode,
+  });
+
+  const message = statusCode === 503
+    ? "The Gemini service is temporarily unavailable. Please try again shortly."
+    : statusCode === 404
+      ? `The configured Gemini model (${model}) is unavailable. Choose a model enabled for this API key.`
+      : statusCode === 400 || statusCode === 401 || statusCode === 403
+        ? "Gemini rejected the request. Check that the API key is valid and Gemini API access is enabled."
+        : "The AI service could not generate a response. Please try again later.";
+
+  return new HttpsError(
+    "unavailable",
+    message,
+  );
+}
+
 async function activeResources(limit = 30): Promise<ResourceRecord[]> {
   const snapshot = await db.collection("resources")
     .where("isActive", "==", true)
@@ -75,12 +104,17 @@ export const askNavigator = onCall(
       throw new HttpsError("failed-precondition", "No verified resource records are available.");
     }
 
-    const result = await answerResourceQuestion({
-      apiKey: geminiApiKey.value(),
-      model: geminiModel.value(),
-      query: input.query,
-      resources,
-    });
+    let result: Awaited<ReturnType<typeof answerResourceQuestion>>;
+    try {
+      result = await answerResourceQuestion({
+        apiKey: geminiApiKey.value(),
+        model: geminiModel.value(),
+        query: input.query,
+        resources,
+      });
+    } catch (error) {
+      throw geminiUnavailable(error, geminiModel.value());
+    }
 
     const selected = result.resourceIds
       .map((id) => resources.find((resource) => resource.id === id))
@@ -119,15 +153,20 @@ export const planTrip = onCall(
       return distanceMeters(resource.location, input.destination) <= 2_000;
     }).slice(0, 8);
 
-    const explanation = await explainTrip({
-      apiKey: geminiApiKey.value(),
-      model: geminiModel.value(),
-      destinationLabel: input.destinationLabel,
-      budgetNote: input.budgetNote,
-      accessibilityNote: input.accessibilityNote,
-      routes,
-      resources,
-    });
+    let explanation: Awaited<ReturnType<typeof explainTrip>>;
+    try {
+      explanation = await explainTrip({
+        apiKey: geminiApiKey.value(),
+        model: geminiModel.value(),
+        destinationLabel: input.destinationLabel,
+        budgetNote: input.budgetNote,
+        accessibilityNote: input.accessibilityNote,
+        routes,
+        resources,
+      });
+    } catch (error) {
+      throw geminiUnavailable(error, geminiModel.value());
+    }
 
     const selectedResources = explanation.resourceIds
       .map((id) => resources.find((resource) => resource.id === id))
